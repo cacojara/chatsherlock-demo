@@ -14,8 +14,15 @@ exports.handler = async (event, context) => {
   }
 
   if (event.httpMethod !== 'POST') {
-    return { statusCode: 405, body: 'Method Not Allowed' };
-  }
+  return { 
+    statusCode: 405, 
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Content-Type': 'application/json'
+    },
+    body: 'Method Not Allowed' 
+  };
+}
 
   const { email, source } = JSON.parse(event.body);
   
