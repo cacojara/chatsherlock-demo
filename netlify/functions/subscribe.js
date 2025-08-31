@@ -42,7 +42,7 @@ exports.handler = async (event, context) => {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': 'Basic ' + Buffer.from('anystring:2d6ff3da8bac8d131542f6a717a209d2-us7').toString('base64'),
+      'Authorization': 'Basic ' + Buffer.from('anystring:12f7b3d1fee5770c601ba23949480020-us7').toString('base64'),
       'User-Agent': 'ChatSherlock/1.0'
     }
   };
