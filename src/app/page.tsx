@@ -212,30 +212,42 @@ function EmailCaptureModal({
   const [isSubmitted, setIsSubmitted] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    if (!email) return
+  e.preventDefault()
+  if (!email) return
 
-    setIsSubmitting(true)
+  setIsSubmitting(true)
+  
+  try {
+    const response = await fetch('/.netlify/functions/subscribe', {
+      method: 'POST',
+      headers: { 
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, source })
+    })
     
-    try {
-      await new Promise(resolve => setTimeout(resolve, 1000))
+    const result = await response.json()
+    
+    if (response.ok) {
       setIsSubmitted(true)
       
-      // Track signup - replace with your analytics
       if (typeof window !== 'undefined' && (window as any).gtag) {
-        (window as any).gtag('event', 'email_signup', {
+        (window as any).gtag('event', 'email_signup_success', {
           source: source,
           email_domain: email.split('@')[1]
         })
       }
-      
-    } catch (error) {
-      console.error('Signup error:', error)
-      alert('Something went wrong. Please try again.')
+    } else {
+      throw new Error(result.error || 'Subscription failed')
     }
     
-    setIsSubmitting(false)
+  } catch (error) {
+    console.error('Signup error:', error)
+    alert('Something went wrong. Please try again.')
   }
+  
+  setIsSubmitting(false)
+}
 
   const resetModal = () => {
     setEmail('')
