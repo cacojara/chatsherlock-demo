@@ -37,21 +37,21 @@ const DEMO_META: Record<DemoKey, { label: string; icon: string; blurb: string; h
     label: 'Researcher',
     icon: '🔬',
     blurb: 'Explore penguins in Chile: field notes, drone counts, grants.',
-    helper: "Try 'drone' to get started.",
+    helper: "Try 'drone' or 'penguin'.",
     file: '/datasets/dataset_researcher.json',
   },
   consultant: {
     label: 'Consultant',
     icon: '🌍',
     blurb: 'Expand beyond the US: markets, legal, payroll.',
-    helper: "Try 'subsidiary' or 'EOR'.",
+    helper: "Try 'subsidiary' or 'strategy'.",
     file: '/datasets/dataset_consultant.json',
   },
   creator: {
     label: 'Creator',
     icon: '🎥',
     blurb: 'Northern Australia series: scripts, wildlife, gear.',
-    helper: "Try 'reef' or 'crocodile'.",
+    helper: "Try 'filming' or 'reef'.",
     file: '/datasets/dataset_creator.json',
   },
 }
@@ -355,7 +355,7 @@ function DemoPicker({ onPick, onOpenEmailCapture }: { onPick: (key: DemoKey) => 
             <h1 className="text-4xl font-bold text-gray-900">ChatSherlock</h1>
           </div>
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Try ChatSherlock with demo data</h2>
-          <p className="text-xl text-gray-600 mb-6">Pick a profile and search sample chats—no personal data needed.</p>
+          <p className="text-xl text-gray-600 mb-6">With ChatSherlock you can store your data and intuitively search through it. Pick a profile and search sample chats—no personal data needed.</p>
           
           <button
             onClick={() => onOpenEmailCapture('hero')}
@@ -837,6 +837,7 @@ function SearchShell({ demoKey, onBack, onOpenEmailCapture }: { demoKey: DemoKey
         conversations={dataset.conversations}
         onOpenConversation={(id) => {
           setActiveId(id)
+          setShowMessages(true)
           setBrowseOpen(false)
         }}
       />
