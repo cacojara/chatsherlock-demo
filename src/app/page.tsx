@@ -355,7 +355,7 @@ function DemoPicker({ onPick, onOpenEmailCapture }: { onPick: (key: DemoKey) => 
             <h1 className="text-4xl font-bold text-gray-900">ChatSherlock</h1>
           </div>
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Try ChatSherlock with demo data</h2>
-          <p className="text-xl text-gray-600 mb-6">With ChatSherlock you can store your data and intuitively search through it. Pick a profile and search sample chats—no personal data needed.</p>
+          <p className="text-xl text-gray-600 mb-6">With ChatSherlock you can store your ChatGPT data and intuitively search through it. Pick a profile and search sample chats—no personal data needed.</p>
           
           <button
             onClick={() => onOpenEmailCapture('hero')}
