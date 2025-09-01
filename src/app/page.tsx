@@ -714,17 +714,18 @@ function SearchShell({ demoKey, onBack, onOpenEmailCapture }: { demoKey: DemoKey
   }, [dataset, activeId])
 
   useEffect(() => {
-    if (results.length > 0) {
-      const stillExists = results.find(r => r.conversationId === activeId)
-      if (!stillExists) {
-        setActiveId(results[0].conversationId)
-        setShowMessages(false)
-      }
-    } else {
-      setActiveId(undefined)
+  if (results.length > 0) {
+    const stillExists = results.find(r => r.conversationId === activeId)
+    if (!stillExists) {
+      setActiveId(results[0].conversationId)
       setShowMessages(false)
     }
-  }, [results, activeId])
+  } else if (query.trim()) {
+    // Only reset when there's actually a search query that returned no results
+    setActiveId(undefined)
+    setShowMessages(false)
+  }
+}, [results, activeId, query])
 
   const handleSnippetClick = (id: string) => {
     setActiveId(id)
