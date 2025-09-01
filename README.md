@@ -2,8 +2,8 @@
 
 **Your AI Conversation Detective**
 
-[![Live Demo](https://img.shields.io/badge/Demo-Live-brightgreen)](https://stirring-croissant-03a72a.netlify.app/)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/your-site-id/deploy-status)](https://app.netlify.com/sites/stirring-croissant-03a72a/deploys)
+[![Live Demo](https://img.shields.io/badge/Demo-Live-brightgreen)](https://chatsherlock.netlify.app/)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/your-site-id/deploy-status)](https://app.netlify.com/sites/chatsherlock/deploys)
 
 > Transform your ChatGPT conversation history into a searchable knowledge vault with detective-level precision.
 
@@ -25,7 +25,7 @@ ChatSherlock solves conversation search with:
 
 ## 🚀 Live Demo
 
-**Try it now:** [https://stirring-croissant-03a72a.netlify.app/](https://stirring-croissant-03a72a.netlify.app/)
+**Try it now:** [https://chatsherlock.netlify.app/](https://chatsherlock.netlify.app/)
 
 ### Demo Features
 - **Three personas** - Researcher, Consultant, Creator with realistic ChatGPT conversations
@@ -183,7 +183,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙋‍♂️ Contact & Feedback
 
-- **Demo**: [https://stirring-croissant-03a72a.netlify.app/](https://stirring-croissant-03a72a.netlify.app/)
+- **Demo**: [https://chatsherlock.netlify.app/](https://chatsherlock.netlify.app/)
 - **Website**: [https://chatsherlock.com](https://chatsherlock.com)
 - **Feedback**: Use the email capture form in the demo to join our beta list
 
